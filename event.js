@@ -1,17 +1,29 @@
-const title = document.querySelector("div.today h1");
-
-function handleTitleClick() {
-    title.style.color = "blue";
-    title.innerText = "Today is the end of the year!";
-}
-function handleMouseEnter() {
-    title.innerText = "Mouse is here";
-}
-function handleMouseLeave() {
-    title.innerText = "Mouse is gone";
-}
+const endOfYear = document.querySelector("div.today h1");
+const newYear = document.querySelector("div.happy h1");
 
 
-    title.addEventListener("mouseenter",handleMouseEnter)
-    title.addEventListener("mouseleave", handleMouseLeave)
-    title.addEventListener("click", handleTitleClick);
+function handleEndClick() {
+  const currentEndColor = endOfYear.style.color;
+  let ChangeEndColor;
+  if (currentEndColor === "blue") {
+    ChangeEndColor = "yellow";
+  } else {
+    ChangeEndColor = "blue";
+  }
+    endOfYear.style.color = ChangeEndColor;
+}
+
+
+function handleNewClick() {
+  const currentNewColor = newYear.style.color;
+  let ChangeNewColor;
+  if (currentNewColor === "red") {
+    ChangeNewColor = "green";
+  } else {
+    ChangeNewColor = "red";
+  }
+    newYear.style.color = ChangeNewColor;
+}
+
+    endOfYear.addEventListener("click", handleEndClick);
+    newYear.addEventListener("click", handleNewClick);
